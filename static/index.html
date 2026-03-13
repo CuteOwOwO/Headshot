@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">HeadShot Gen.</div>
+        <nav>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="title">Create Your HeadShot</h1>
+        
+        <div class="upload-section">
+            <div class="file-input-group">
+                <label for="userPhoto">User Photo</label>
+                <input type="file" id="userPhoto" accept="image/*">
+            </div>
+            
+            <div class="file-input-group">
+                <label for="template">Template (PNG)</label>
+                <input type="file" id="template" accept="image/png">
+            </div>
+        </div>
+
+        <button id="generateBtn" class="btn">Drag then Generate</button>
+
+        <div id="workspace" class="workspace hidden">
+            <img id="displayUserPhoto" src="" alt="Background">
+            <img id="displayTemplate" src="" alt="Template Overlay">
+        </div>
+
+        <div id="resultContainer" class="result-container hidden">
+            <img id="resultImage" src="" alt="Generated Avatar">
+            <a id="downloadBtn" class="btn outline" download="avatar.jpg">Download</a>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

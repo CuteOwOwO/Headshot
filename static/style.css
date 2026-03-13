@@ -1,0 +1,162 @@
+/* 重置與基本設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0; /* 淺灰底色，呼應參考圖 */
+    color: #000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* 頂部導覽列 */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+/* 主要內容區塊 */
+main {
+    max-width: 800px;
+    margin: 10vh auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: 4rem;
+    text-transform: lowercase; /* 模仿 grafite 的字體風格 */
+}
+
+/* 上傳區塊 */
+.upload-section {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.file-input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.file-input-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+input[type="file"] {
+    border: 2px solid #000;
+    padding: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* 按鈕設計：無漸層、黑白強烈對比 */
+.btn {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+.btn.outline {
+    background-color: transparent;
+    color: #000;
+    margin-top: 1rem;
+}
+
+.btn.outline:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 結果展示區 */
+.result-container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.result-container img {
+    max-width: 100%;
+    border: 4px solid #000; /* 強烈的黑色邊框 */
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* 在 style.css 最底下加入 */
+
+.workspace {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* 限制最大寬度，維持版面乾淨 */
+    border: 2px solid #000;
+    margin-bottom: 2rem;
+    overflow: hidden; /* 切掉跑出框外的模板 */
+    background-color: #fff;
+    display: flex;
+}
+
+#displayUserPhoto {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none; /* 鎖死底圖，防止被滑鼠反白或拖拉 */
+}
+
+#displayTemplate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    cursor: grab;
+    opacity: 0.7; 
+    transition: opacity 0.2s ease;
+    
+    /* 【新增這行】防止手機在拖曳圖片時，整個網頁跟著上下左右滑動 */
+    touch-action: none; 
+}
+
+#displayTemplate:active {
+    cursor: grabbing; /* 按下時改變鼠標 */
+    opacity: 0.9;
+}
