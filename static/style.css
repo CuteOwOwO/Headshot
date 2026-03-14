@@ -187,35 +187,48 @@ input[type="file"] {
     opacity: 0.9;
 }
 
-/* --- 響應式設計 (Mobile Friendly) --- */
 @media (max-width: 768px) {
-    /* 1. 縮小頂部兩側的留白 */
+    /* 1. 縮小頂部兩側的留白，避免擠壓空間 */
     header {
-        padding: 1.5rem 2rem;
+        padding: 1.5rem 1.5rem;
     }
 
-    /* 2. 標題字體縮小，避免超出螢幕 */
+    /* 2. 標題字體縮小 */
     .title {
         font-size: 2.5rem;
         margin-bottom: 2rem;
         text-align: center;
     }
 
-    /* 3. 上傳區塊：從左右並排改成上下堆疊 */
+    /* 3. 上傳區塊：上下堆疊，強制寬度 100% */
     .upload-section {
         flex-direction: column;
         gap: 1.5rem;
+        width: 100%;
     }
 
-    /* 4. 按鈕寬度撐滿，在手機上比較好按 */
+    /* 4. 👇 關鍵救援：強制縮小輸入框，並限制最大寬度 */
+    .file-input-group {
+        width: 100%;
+    }
+
+    input[type="file"] {
+        width: 100%;       /* 強制不能超出外框 */
+        padding: 1rem;     /* 內邊距從 1.5rem 縮小到 1rem，瘦身一下 */
+        font-size: 0.9rem; /* 字體微調，避免擠破格子 */
+    }
+
+    /* 5. 按鈕寬度撐滿 */
     .btn {
         width: 100%;
         text-align: center;
     }
 
-    /* 5. 縮減整體左右留白 */
+    /* 6. 確保 main 的左右有足夠的「安全距離」 */
     main {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
         margin: 5vh auto;
+        width: 100%;
+        overflow-x: hidden; /* 防止任何東西偷偷超出左右邊界 */
     }
 }
