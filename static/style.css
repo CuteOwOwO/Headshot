@@ -16,15 +16,16 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* 確保 Logo 跟右邊導覽列對齊 */
     padding: 2rem 4rem;
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 1.5rem; /* 控制文字與圖示的間距 */
+    gap: 1.5rem; /* 控制 Contact 文字跟兩個 Icon 的間距 */
 }
 
 nav a {
@@ -32,19 +33,28 @@ nav a {
     text-decoration: none;
     display: flex;
     align-items: center;
+    /* 記得不要留舊的 margin-left: 2rem，用上面的 gap 取代就好 */
 }
 
 .icon-link {
     transition: opacity 0.2s ease;
+    display: flex;
+}
+
+/* 強制規定 SVG 的大小與黑色線條 */
+.icon-link svg {
+    width: 24px;
+    height: 24px;
+    stroke: #000; 
 }
 
 .icon-link:hover {
-    opacity: 0.5; /* 滑鼠移上去稍微變淡的質感 */
+    opacity: 0.5;
 }
 /* 主要內容區塊 */
 main {
-    max-width: 800px;
-    margin: 10vh auto;
+    max-width: 1000px;
+    margin: 20vh auto;
     padding: 0 2rem;
     display: flex;
     flex-direction: column;
@@ -52,7 +62,7 @@ main {
 }
 
 .title {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 900;
     letter-spacing: -0.05em;
     margin-bottom: 4rem;
@@ -63,7 +73,7 @@ main {
 .upload-section {
     display: flex;
     gap: 2rem;
-    width: 100%;
+    width: 120%;
     margin-bottom: 2rem;
 }
 

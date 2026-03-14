@@ -154,3 +154,23 @@ generateBtn.addEventListener('click', async () => {
         generateBtn.disabled = false;
     }
 });
+
+
+document.getElementById('emailContact').addEventListener('click', (e) => {
+    e.preventDefault(); // 防止任何預設點擊行為
+    
+    const email = 'anguszheng11@gmail.com';
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+
+    navigator.clipboard.writeText(email).then(() => {
+        // 程式會在這裡停住，等待使用者點擊「確定」
+        alert(`信箱已複製到剪貼簿：${email}\n\n按下「確定」後，將為您開啟 Gmail 寫信頁面！`);
+        
+        // 下確定後，才透過 JS 開啟新分頁
+        window.open(gmailUrl, '_blank');
+    }).catch(err => {
+        console.error('複製失敗:', err);
+        // 如果複製失敗，還是可以幫他開分頁
+        window.open(gmailUrl, '_blank');
+    });
+});
