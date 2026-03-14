@@ -154,6 +154,7 @@ input[type="file"] {
     width: 100%;
     max-width: 600px; /* 限制最大寬度，維持版面乾淨 */
     border: 2px solid #000;
+    margin-top: 3rem;
     margin-bottom: 2rem;
     margin-top: 3rem;
     overflow: hidden; /* 切掉跑出框外的模板 */
