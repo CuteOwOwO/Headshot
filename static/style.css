@@ -187,7 +187,7 @@ input[type="file"] {
     opacity: 0.9;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     /* 1. 縮小頂部兩側的留白，避免擠壓空間 */
     header {
         padding: 1.5rem 1.5rem;
