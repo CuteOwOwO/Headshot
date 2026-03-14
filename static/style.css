@@ -195,10 +195,11 @@ input[type="file"] {
 
     /* 2. 標題字體縮小 */
     .title {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
+    font-size: clamp(2rem, 10vw, 2.5rem); /* 讓字體根據螢幕寬度動態縮放 */
+    margin-bottom: 2rem;
+    text-align: center;
+    word-wrap: break-word; /* 允許長單字斷行 */
+}
 
     /* 3. 上傳區塊：上下堆疊，強制寬度 100% */
     .upload-section {
