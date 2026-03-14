@@ -213,9 +213,16 @@ input[type="file"] {
     }
 
     input[type="file"] {
-        width: 100%;       /* 強制不能超出外框 */
-        padding: 1rem;     /* 內邊距從 1.5rem 縮小到 1rem，瘦身一下 */
-        font-size: 0.9rem; /* 字體微調，避免擠破格子 */
+        width: 100%;
+        max-width: 100%;     /* 確保絕對不超過父元素 */
+        box-sizing: border-box; /* 確保 padding 算在寬度內 */
+        padding: 1rem;
+        font-size: 0.9rem;
+        
+        /* 👇 終極壓制：字太長就卡斷變成 ... */
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap;
     }
 
     /* 5. 按鈕寬度撐滿 */
