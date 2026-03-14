@@ -21,12 +21,26 @@ header {
     font-size: 0.9rem;
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* 控制文字與圖示的間距 */
+}
+
 nav a {
     color: #000;
     text-decoration: none;
-    margin-left: 2rem;
+    display: flex;
+    align-items: center;
 }
 
+.icon-link {
+    transition: opacity 0.2s ease;
+}
+
+.icon-link:hover {
+    opacity: 0.5; /* 滑鼠移上去稍微變淡的質感 */
+}
 /* 主要內容區塊 */
 main {
     max-width: 800px;
@@ -159,4 +173,37 @@ input[type="file"] {
 #displayTemplate:active {
     cursor: grabbing; /* 按下時改變鼠標 */
     opacity: 0.9;
+}
+
+/* --- 響應式設計 (Mobile Friendly) --- */
+@media (max-width: 768px) {
+    /* 1. 縮小頂部兩側的留白 */
+    header {
+        padding: 1.5rem 2rem;
+    }
+
+    /* 2. 標題字體縮小，避免超出螢幕 */
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    /* 3. 上傳區塊：從左右並排改成上下堆疊 */
+    .upload-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* 4. 按鈕寬度撐滿，在手機上比較好按 */
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 5. 縮減整體左右留白 */
+    main {
+        padding: 0 1rem;
+        margin: 5vh auto;
+    }
 }
